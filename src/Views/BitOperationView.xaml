@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="Chezar.Views.BitOperationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Chezar.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <RadioButton x:Name="SetDecode" Content="Декодировка" GroupName="code" Margin="5" Grid.Column="0" />
+            <RadioButton x:Name="SetEncode" Content="Kодировка" IsChecked="True" GroupName="code" Margin="5"
+                         Grid.Column="1" />
+        </Grid>
+
+        <TextBlock x:Name="InputTextEntropy" Grid.Row="1" />
+        <TextBox x:Name="InputText" TextWrapping="Wrap" Margin="10" Grid.Row="2" />
+        <TextBlock x:Name="InputBinary" TextWrapping="Wrap" Margin="10" Grid.Row="3"/>
+        <TextBlock x:Name="OutputTextEntropy" Grid.Row="4" />
+        <TextBox x:Name="OutputText" TextWrapping="Wrap" Margin="10" Grid.Row="5" />
+        <TextBlock x:Name="OutputBinary" TextWrapping="Wrap" Margin="10" Grid.Row="6"/>
+    </Grid>
+</UserControl>
