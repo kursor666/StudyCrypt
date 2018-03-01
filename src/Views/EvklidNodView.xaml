@@ -11,6 +11,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -22,5 +23,7 @@
         <TextBox x:Name="FirstNumber" Grid.Row="0" Grid.Column="1" />
         <TextBox x:Name="SecondNumber" Grid.Row="1" Grid.Column="1" />
         <TextBox x:Name="Result" IsReadOnly="True" Grid.Row="2" Grid.Column="1" />
+        <TextBox x:Name="ReverseResult" IsReadOnly="True" Grid.Row="3" Grid.Column="1" />
+        
     </Grid>
 </UserControl>

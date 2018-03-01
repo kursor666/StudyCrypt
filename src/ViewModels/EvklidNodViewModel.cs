@@ -29,6 +29,7 @@ namespace Chezar.ViewModels
                 _firstNumber = value;
                 NotifyOfPropertyChange(() => FirstNumber);
                 NotifyOfPropertyChange(() => Result);
+                NotifyOfPropertyChange(() => ReverseResult);
             }
         }
 
@@ -40,9 +41,12 @@ namespace Chezar.ViewModels
                 _secondNumber = value;
                 NotifyOfPropertyChange(() => SecondNumber);
                 NotifyOfPropertyChange(() => Result);
+                NotifyOfPropertyChange(() => ReverseResult);
             }
         }
 
         public int Result => _model.GetNod(_firstNumber, _secondNumber);
+
+        public int? ReverseResult => _model.GetReverseNod(_firstNumber, _secondNumber);
     }
 }
