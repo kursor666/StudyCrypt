@@ -3,10 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:Chezar.Views"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="InputNumber" Margin="5" Grid.Row="0"/>
+        <TextBox x:Name="OutputNumber" Margin="5" IsReadOnly="True" Grid.Row="1"/>
+        <ListView x:Name="PspTempItems" Grid.Row="2">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Исходное значение" DisplayMemberBinding="{Binding Path=SourceValue}"/>
+                        <GridViewColumn Header="Выходной бит" DisplayMemberBinding="{Binding Path=Bit0}" />
+                        <GridViewColumn Header="2 бит" DisplayMemberBinding="{Binding Path=Bit2}" />
+                        <GridViewColumn Header="12 бит" DisplayMemberBinding="{Binding Path=Bit12}" />
+                        <GridViewColumn Header="25 бит" DisplayMemberBinding="{Binding Path=Bit25}" />
+                        <GridViewColumn Header="32 бит" DisplayMemberBinding="{Binding Path=Bit32}" />
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </UserControl>

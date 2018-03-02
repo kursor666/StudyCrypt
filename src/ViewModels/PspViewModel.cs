@@ -11,27 +11,29 @@ namespace Chezar.ViewModels
     public sealed class PspViewModel : Screen, IScreenView
     {
         private readonly PspModel _pspModel;
-        private int _inputNumber;
-        private int _outputNumber;
+        private uint _inputNumber;
+        private uint _outputNumber;
 
         public PspViewModel(PspModel pspModel)
         {
             _pspModel = pspModel;
-            DisplayName = "Нод";
+            DisplayName = "Генерация ПСП";
         }
 
         public List<PspTempItem> PspTempItems => _pspModel.PspTempItems;
 
-        public int OutputNumber => _outputNumber;
+        public uint OutputNumber => _outputNumber;
 
-        public int InputNumber
+        public uint InputNumber
         {
             get => _inputNumber;
             set
             {
                 _inputNumber = value;
                 _outputNumber = _pspModel.GetPsp(_inputNumber);
-                Refresh();
+                NotifyOfPropertyChange(() => InputNumber);
+                NotifyOfPropertyChange(() => OutputNumber);
+                NotifyOfPropertyChange(() => PspTempItems);
             }
         }
     }

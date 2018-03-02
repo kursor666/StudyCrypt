@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using System.Windows;
 using Caliburn.Micro;
 using Chezar.Models;
@@ -30,11 +28,13 @@ namespace Chezar
             _kernel.Bind<BelazoPortAlgorithmModel>().ToSelf().InSingletonScope();
             _kernel.Bind<BitOperationModel>().ToSelf().InSingletonScope();
             _kernel.Bind<EvklidNodModel>().ToSelf().InSingletonScope();
+            _kernel.Bind<PspModel>().ToSelf().InSingletonScope();
             
             _kernel.Bind<IScreenView>().To<ChezarViewModel>();
             _kernel.Bind<IScreenView>().To<BelazoPortViewModel>();
             _kernel.Bind<IScreenView>().To<BitOperationViewModel>();
             _kernel.Bind<IScreenView>().To<EvklidNodViewModel>();
+            _kernel.Bind<IScreenView>().To<PspViewModel>();
 
             _kernel.Bind<EntropyModel>().ToSelf();
         }

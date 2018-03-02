@@ -2,14 +2,7 @@
 {
     public class PspTempItem
     {
-        private string _sourceValue;
-
-        public string SourceValue
-        {
-            get => _sourceValue;
-            set => _sourceValue = value.PadLeft(32, '0');
-        }
-
+        public string SourceValue { get; set; }
         public char Bit32 { get; set; }
         public char Bit25 { get; set; }
         public char Bit12 { get; set; }
